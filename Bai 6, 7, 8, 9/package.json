@@ -1,0 +1,29 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Tomazacre12/Hoc-NodeJs.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Tomazacre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tomazacre12/Hoc-NodeJs/issues"
+  },
+  "homepage": "https://github.com/Tomazacre12/Hoc-NodeJs#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
