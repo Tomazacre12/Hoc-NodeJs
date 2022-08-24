@@ -1,10 +1,12 @@
 const express = require('express')
 const morgan = require('morgan')
 const app = express()
-const port = 2422
+const port = 2004
 const path = require("path");
 const exphbs = require("express-handlebars");
 const { engine } = require("express-handlebars");
+
+const route = require('./routes')
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({
@@ -14,27 +16,15 @@ app.use(express.json())
 
 
 app.use(morgan('combined'))
-
+// template engine
 app.engine("hbs", engine({
   extname: '.hbs'
 }));
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, 'resources/views'));
 
-
-app.get('/', (req, res) => {
-  res.render("home");
-})
-app.get('/news', (req, res) => {
-  res.render("news");
-})
-app.get('/search', (req, res) => {
-  res.render("search");
-})
-app.post('/search', (req, res) => {
-  console.log(req.body)
-  res.send("");
-})
+// routes init
+route(app)
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
